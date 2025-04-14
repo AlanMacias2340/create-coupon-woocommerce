@@ -1,5 +1,6 @@
 import { useForm, SubmitHandler } from "react-hook-form"
 import { useEffect, useState } from "react"
+import { ButtonOption } from "./button-option"
 
 
 type IFormInput = {
@@ -43,8 +44,8 @@ export function FormCoupon({ functionOnSubmit, functionChangeCodeCoupon }: Props
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4 w-full p-4 text-white">
       <div className="flex flex-row gap-4 w-full mb-4">
-        <div>
-          <div>
+        <div className="flex flex-col gap-4 w-full">  
+          <div className="">
             Código del cupón
             <input {...register("code", { required: true })} className="border p-2 w-full" value={codeCoupon} onChange={handleChangeCouponCode}/>
           </div>
@@ -69,10 +70,10 @@ export function FormCoupon({ functionOnSubmit, functionChangeCodeCoupon }: Props
           </div>
         </div>
         
-        <div>
-          <div className="flex items-center gap-2">
+        <div className="flex flex-col gap-4 w-full justify-end">
+          <div className="flex items-center gap-2h h-[41px]">
             <input type="checkbox" {...register("individual_use")} />
-            Usar de forma individual (no combinable)
+            Cupones acumulables (no combinable)
           </div>
           
           <div>
@@ -91,10 +92,7 @@ export function FormCoupon({ functionOnSubmit, functionChangeCodeCoupon }: Props
           </div>
         </div>
       </div>
-
-      <button type="submit" className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">
-        Crear cupón
-      </button>
+      <ButtonOption textButton="Crear cupón"/>
     </form>
   )
 }

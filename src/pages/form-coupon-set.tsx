@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { FormCoupon } from "@/components/form-coupon";
+import {CreateCouponSet } from "@/lib/create-coupon/create-coupon-set";
 
 type Props = {};
 
@@ -38,7 +39,7 @@ export function FormCouponSet({}: Props) {
 
   useEffect(() => {
     if (Object.keys(dataCoupon).length > 0) {
-      console.log("Data Coupon Set: ", dataCoupon);
+      CreateCouponSet(dataCoupon, amount);
     }
   }, [dataCoupon]);
 
