@@ -38,7 +38,7 @@ function CreateCoupon({}: Props) {
         <label htmlFor="" className="ml-4 text-white">
           Código del cupón:
         </label>
-        <p className="w-[300px] h-auto bg-red-500 overflow-x-auto overflow-y-hidden mr-4 pl-2 pr-2 p-1">
+        <p className="w-[300px] h-auto overflow-x-auto overflow-y-hidden mr-4 pl-2 pr-2 p-1">
           {codeCoupon}
         </p>
       </div>

@@ -5,7 +5,7 @@ type Props = {};
 
 function CreateCouponSet({}: Props) {
   return (
-    <div className="bg-slate-800 mt-1 mb-1 rounded-xl p-5 w-[800px] h-auto overflow-hidden">
+    <div className="bg-slate-800 mt-1 mb-1 rounded-xl p-5 w-auto h-auto overflow-hidden">
       <FormCouponSet />
     </div>
   );

@@ -19,6 +19,7 @@ export const createCoupon = async (data: any) => {
         usage_limit: data.usage_limit,
         usage_limit_per_user: data.usage_limit_per_user,
         date_expires: data.date_expires,
+        limit_usage_to_x_items: data.limit_usage_to_x_items,
       },
       {
         headers: {

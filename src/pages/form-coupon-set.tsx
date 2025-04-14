@@ -1,19 +1,10 @@
 import React, { useEffect } from "react";
 import { FormCoupon } from "@/components/form-coupon";
-import {CreateCouponSet } from "@/lib/create-coupon/create-coupon-set";
+import { CreateCouponSet } from "@/lib/create-coupon/create-coupon-set";
+import { CouponData } from "@/types/types";
 
 type Props = {};
 
-type CouponData = {
-  code: string;
-  amount: string;
-  discount_type: "percent" | "fixed_cart" | "fixed_product";
-  description: string;
-  individual_use: boolean;
-  usage_limit: number;
-  usage_limit_per_user: number;
-  date_expires: string;
-};
 
 export function FormCouponSet({}: Props) {
   const [dataCoupon, setDataCoupon] = React.useState<CouponData>(
@@ -33,9 +24,9 @@ export function FormCouponSet({}: Props) {
     }
   };
 
-  const handleChangeCouponCode = (value: string) =>{
+  const handleChangeCouponCode = (value: string) => {
     setCodeCoupon(value);
-  }
+  };
 
   useEffect(() => {
     if (Object.keys(dataCoupon).length > 0) {
@@ -64,7 +55,10 @@ export function FormCouponSet({}: Props) {
           <p>Código cupón: {codeCoupon}001</p>
         </label>
       </div>
-      <FormCoupon functionOnSubmit={getDataCoupon} functionChangeCodeCoupon={handleChangeCouponCode}/>
+      <FormCoupon
+        functionOnSubmit={getDataCoupon}
+        functionChangeCodeCoupon={handleChangeCouponCode}
+      />
     </div>
   );
 }
