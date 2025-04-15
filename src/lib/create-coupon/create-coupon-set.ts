@@ -1,7 +1,10 @@
 import { createCoupon } from "@/lib/create-coupon/create-coupon";
 import { CouponData } from "@/types/types";
 
-export function CreateCouponSet(data: CouponData, value: number) {
+export async function CreateCouponSet(data: CouponData, value: number, changeStatusSend: (status: boolean) => void) {
+  changeStatusSend(true);
+
+  let getText = {};
   let codeNumber = "";
   for (let i = 1; i <= value; i++) {
     if (i < 10) {
@@ -17,6 +20,9 @@ export function CreateCouponSet(data: CouponData, value: number) {
       ...data,
       code: codeNumber,
     };
-    createCoupon(dataCoupon);
+    getText = await createCoupon({data: dataCoupon});
   }
+  
+  changeStatusSend(false);
+  return getText;
 }

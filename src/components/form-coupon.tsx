@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import { ButtonOption } from "./button-option";
 import { CouponData } from "@/types/types";
 
-
 type Props = {
   functionOnSubmit?: (data: CouponData) => void;
   functionChangeCodeCoupon?: (code: string) => void;
@@ -120,9 +119,13 @@ export function FormCoupon({
         </div>
 
         <div className="flex flex-col gap-4 w-full">
-          <div className="flex items-center justify-center gap-2 h-[41px]">
+          <div className="flex items-center justify-start gap-2 h-[65.6px]">
             <input type="checkbox" {...register("individual_use")} />
-            Cupones acumulables (no combinable)
+            Uso individual
+          </div>
+          <div className="flex items-center justify-start gap-2 h-[65.6px]">
+            <input type="checkbox" {...register("exclude_sale_items")} />
+            Excluir artículos rebajados
           </div>
         </div>
       </div>

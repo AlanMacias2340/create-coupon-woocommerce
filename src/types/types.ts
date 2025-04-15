@@ -8,4 +8,5 @@ export type CouponData = {
     usage_limit_per_user: number;
     date_expires: string;
     limit_usage_to_x_items: number;
+    exclude_sale_items: boolean;
 };
