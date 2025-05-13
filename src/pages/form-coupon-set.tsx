@@ -33,7 +33,7 @@ export function FormCouponSet({}: Props) {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = parseInt(e.target.value);
-    if (value > 0 && value < 100) {
+    if (value > 0 && value <= 100) {
       setAmount(value);
     }
   };
